@@ -7,7 +7,7 @@ export const scopes = {
     DRIVE: "https://www.googleapis.com/auth/drive" as const,
 };
 
-export const FOLDER_ID = "175oMzwdvzOmfwU8KonnpwvheiQNiV9zE" as const;
+export const FOLDER_ID = process.env.NEXT_PUBLIC_FOLDER_ID as string;
 
 export const GOOGLE_DRIVE_STORAGE_LOCATION = (id: string) => {
     return `https://drive.google.com/uc?export=view&id=${id}`;
