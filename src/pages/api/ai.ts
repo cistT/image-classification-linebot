@@ -1,10 +1,10 @@
-// import { client } from "@/config/lineBot";
-// import { NextApiRequest, NextApiResponse } from "next";
-// import { loadGraphModel } from "@tensorflow/tfjs-converter";
-// import * as tf from "@tensorflow/tfjs-node";
-// import path, { dirname } from "path";
-// import { promises as fs } from "fs";
-// import { learn } from "@/utiles/learn";
+import { client } from "@/config/lineBot";
+import { NextApiRequest, NextApiResponse } from "next";
+import { loadGraphModel } from "@tensorflow/tfjs-converter";
+import * as tf from "@tensorflow/tfjs-node";
+import path, { dirname } from "path";
+import { promises as fs } from "fs";
+import { learn } from "@/utiles/learn";
 
 
 // const AI_LABELS = [
@@ -37,3 +37,16 @@
 // };
 
 // export default handler;
+
+const handler = async (_: NextApiRequest, res: NextApiResponse) => {
+    // const i = await fs.readFile("public/mink.jpeg");
+
+    // const data = await learn(i);
+    // const name = data?.name ?? "miss";
+
+    res.status(200).json({
+        message: "ok",
+    });
+};
+
+export default handler;
