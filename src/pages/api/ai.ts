@@ -6,7 +6,6 @@ import path, { dirname } from "path";
 import { promises as fs } from "fs";
 import { learn } from "@/utiles/learn";
 
-
 // const AI_LABELS = [
 //     "アメリカンミンク",
 //     "アリゲーターガー",
@@ -38,15 +37,16 @@ import { learn } from "@/utiles/learn";
 
 // export default handler;
 
-const handler = async (_: NextApiRequest, res: NextApiResponse) => {
-    // const i = await fs.readFile("public/mink.jpeg");
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  // const i = await fs.readFile("public/mink.jpeg");
 
-    // const data = await learn(i);
-    // const name = data?.name ?? "miss";
+  // const data = await learn(i);
+  // const name = data?.name ?? "miss";
+  console.log(req);
 
-    res.status(200).json({
-        message: "ok",
-    });
+  res.status(200).json({
+    message: "ok",
+  });
 };
 
 export default handler;
