@@ -41,6 +41,7 @@ const Index = () => {
               height={300}
               src={`${creature.imageURL}&usp=sharing`}
               alt={creature.name}
+              unoptimized
             />
           ) : (
             <>NoImage</>
