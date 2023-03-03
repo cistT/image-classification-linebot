@@ -39,7 +39,7 @@ const Index = () => {
             <Image
               width={300}
               height={300}
-              src={creature.imageURL}
+              src={`https://drive.google.com/uc?id=1D6GM5t_mD0-2_mkp30-m36z9dEXt2nxE`}
               alt={creature.name}
             />
           ) : (
