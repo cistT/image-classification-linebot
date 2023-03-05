@@ -1,8 +1,10 @@
+import Square from "@/features/bingo/components/Square";
 import { getUserData } from "@/utiles/creatureModel";
 import { Creature } from "@prisma/client";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import styles from "./[id].module.scss";
 
 const Index = () => {
   const router = useRouter();
@@ -30,24 +32,27 @@ const Index = () => {
     return <>faild</>;
   }
 
+  const squares = [
+    creatures.slice(0, 3),
+    creatures.slice(3, 6),
+    creatures.slice(6, 9),
+  ];
+
   return (
     <>
-      {creatures.map((creature) => (
-        <div key={creature.name}>
-          <h1>{creature.name}</h1>
-          {creature.imageURL ? (
-            <Image
-              width={300}
-              height={300}
-              src={`${creature.imageURL}&usp=sharing`}
-              alt={creature.name}
-              unoptimized
-            />
-          ) : (
-            <>NoImage</>
-          )}
-        </div>
-      ))}
+      {squares.map((square, i) => {
+        return (
+          <div className={styles["container"]} key={i}>
+            {square.map((creature) => (
+              <Square
+                key={creature.name}
+                label={creature.name}
+                imageURL={creature.imageURL}
+              />
+            ))}
+          </div>
+        );
+      })}
     </>
   );
 };
