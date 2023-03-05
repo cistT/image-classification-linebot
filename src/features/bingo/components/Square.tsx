@@ -25,15 +25,18 @@ const Square: FC<SquareProps> = (props) => {
   return (
     <>
       <div className={styles["container"]} onClick={() => setOpen(true)}>
-        {imageURL && (
-          <Image
-            width={120}
-            height={120}
-            src={imageURL}
-            alt={label}
-            unoptimized
-          />
-        )}
+        <div className={styles["image"]}>
+          {imageURL && (
+            <Image
+              width={120}
+              height={120}
+              src={imageURL}
+              alt={""}
+              unoptimized
+              className={styles["image"]}
+            />
+          )}
+        </div>
 
         <div className={styles["label"]}>{label}</div>
       </div>
